@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,30 +11,43 @@ namespace HomeVidProject.Controllers
 {
     public class MoviesController : Controller
     {
-        // GET: Movies --ViewResult or ActionResult
-        public ActionResult Random()
+        private ApplicationDbContext _context;
+
+        public MoviesController()
         {
-            var movie = new Movie() {Name = "The Book Of Eli!"};
-            var customers = new List<Customer>
-            {
-                new Customer() {Name = "John Doe" },
-                new Customer() { Name = "Kofi Kololo" }
-            };
-
-            var viewModel = new RandomMovieViewModel
-            {
-                Movie = movie,
-                Customers = customers
-            };
-
-
-
-            return View(viewModel);
+            _context = new ApplicationDbContext();
         }
 
-        public ActionResult Edit(int id)
+
+        protected override void Dispose(bool disposing)
         {
-            return Content("Id = " + id);
+            _context.Dispose();
+        }
+
+
+       
+        [Route("movies/random")]
+        public ViewResult Random()
+        {
+            var movies = _context.Movies.Include(m => m.Genre);
+            
+
+            //var viewModel = new RandomMovieViewModel
+            //{
+            //    Movies = movies
+            //};
+            
+
+            return View(movies);
+        }
+
+
+        [Route("movies/details/{id}")]
+        public ViewResult Details(int id)
+        {
+            var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
+
+            return View(movie);
 
         }
 
@@ -42,5 +56,15 @@ namespace HomeVidProject.Controllers
         {
             return Content("Year = "+ year + " month =" + month);
         }
+
+
+        //private IEnumerable<Movie> GetMovies()
+        //{
+        //    return new List<Movie>
+        //    {
+        //        new Movie {Name = "Equalizer 1"},
+        //        new Movie {Name = "The Day The Earth Stood Still"}
+        //    };
+        //}
     }
 }

@@ -1,4 +1,4 @@
-﻿@model HomeVidProject.ViewModels.RandomMovieViewModel
+﻿@*@model HomeVidProject.ViewModels.RandomMovieViewModel*@
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +11,8 @@
 </head>
 <body>
 
-    @Html.Partial("_NavBar", Model.Movie)
+    @*@Html.Partial("_NavBar", Model.Movie)*@
+    @Html.Partial("_NavBar")
 
 <div class="container body-content">
         @RenderBody()

@@ -6,9 +6,9 @@ using HomeVidProject.Models;
 
 namespace HomeVidProject.ViewModels
 {
-    public class RandomMovieViewModel
+    public class RandomCustomerViewModel
     {
-        public List<Movie> Movies { get; set; }
         public List<Customer> Customers { get; set; }
+        public List<Movie> Movies { get; set; }
     }
 }

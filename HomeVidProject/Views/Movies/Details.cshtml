@@ -1,0 +1,16 @@
+﻿@using HomeVidProject.Models
+@using HomeVidProject.ViewModels
+@using Microsoft.Ajax.Utilities
+@model HomeVidProject.Models.Movie
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Name</h2>
+
+<h5>Genre: @Model.Genre.GenreName</h5>
+<h5>Release Date: @Model.ReleaseDate.ToString("D")</h5>
+<h5>Date Added: @Model.DateAdded.ToString("D")</h5>
+<h5>Number In Stoch: @Model.NumberInStock</h5>
+

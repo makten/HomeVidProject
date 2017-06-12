@@ -1,0 +1,43 @@
+﻿
+@using HomeVidProject.Models
+@using HomeVidProject.ViewModels
+@using Microsoft.Ajax.Utilities
+@model IEnumerable<HomeVidProject.Models.Customer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+
+@if (!Model.Any())
+{
+    <p>There are currently no customers!</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Membership Type</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(customer.Name, "Details", "Customers", new {id = customer.Id}, null)</td>
+                <td>@customer.MembershipType.MembershipName</td>
+            </tr>
+        }
+
+        </tbody>
+
+
+
+    </table>
+        
+}
