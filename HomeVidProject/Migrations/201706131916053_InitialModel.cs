@@ -50,7 +50,7 @@ namespace HomeVidProject.Migrations
                         Name = c.String(nullable: false, maxLength: 255),
                         GenreId = c.Int(nullable: false),
                         ReleaseDate = c.DateTime(nullable: false),
-                        DateAdded = c.DateTime(nullable: false),
+                        DateAdded = c.DateTime(),
                         NumberInStock = c.Byte(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)

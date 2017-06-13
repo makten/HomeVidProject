@@ -10,7 +10,19 @@ namespace HomeVidProject.Models
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            return base.IsValid(value, validationContext);
+            var customer = (Customer) validationContext.ObjectInstance;
+
+            if(customer.MembershipTypeId == MembershipType.Unknown || customer.MembershipTypeId == MembershipType.PayAsYouGo)
+                return ValidationResult.Success;
+
+            if (customer.DoB == null)
+                return new ValidationResult("Birthdate is required");
+
+            var age = DateTime.Today.Year - customer.DoB.Value.Year;
+
+            return (age >= 18)
+                ? ValidationResult.Success
+                : new ValidationResult("Customer must be 18 years or older");
         }
     }
 }

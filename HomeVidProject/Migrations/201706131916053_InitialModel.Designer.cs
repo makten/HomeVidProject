@@ -7,13 +7,13 @@ namespace HomeVidProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ChangeMovieAddedDateToNull : IMigrationMetadata
+    public sealed partial class InitialModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeMovieAddedDateToNull));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706130847263_ChangeMovieAddedDateToNull"; }
+            get { return "201706131916053_InitialModel"; }
         }
         
         string IMigrationMetadata.Source

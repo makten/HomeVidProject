@@ -13,7 +13,7 @@ namespace HomeVidProject.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201706130747139_PopulateMembershipType"; }
+            get { return "201706131922272_PopulateMembershipType"; }
         }
         
         string IMigrationMetadata.Source
