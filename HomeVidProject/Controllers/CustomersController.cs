@@ -30,7 +30,7 @@ namespace HomeVidProject.Controllers
         {
             var membershipTypes = _context.MembershipTypes.ToList();
 
-            var viewModel = new CustomeFormViewModel
+            var viewModel = new CustomerFormViewModel
             {
                 MembershipTypes = membershipTypes
             };
@@ -41,8 +41,21 @@ namespace HomeVidProject.Controllers
 
 
         [HttpPost]
-        public ActionResult Create(Customer customer)
+        public ActionResult Save(Customer customer)
         {
+
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new CustomerFormViewModel
+
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+
+                return View("CustomerForm", viewModel);
+            }
+
 
             if (customer.Id == 0)
             {
@@ -71,7 +84,7 @@ namespace HomeVidProject.Controllers
             if(customer == null)
                 return HttpNotFound();
 
-            var viewModel = new CustomeFormViewModel
+            var viewModel = new CustomerFormViewModel
             {
                 Customer = customer,
                 MembershipTypes = _context.MembershipTypes.ToList()

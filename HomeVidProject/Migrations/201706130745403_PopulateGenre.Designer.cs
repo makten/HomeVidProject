@@ -7,13 +7,13 @@ namespace HomeVidProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddAnotationToMovie : IMigrationMetadata
+    public sealed partial class PopulateGenre : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddAnotationToMovie));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(PopulateGenre));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706111913054_AddAnotationToMovie"; }
+            get { return "201706130745403_PopulateGenre"; }
         }
         
         string IMigrationMetadata.Source

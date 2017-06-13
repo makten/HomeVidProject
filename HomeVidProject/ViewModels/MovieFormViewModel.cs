@@ -6,9 +6,9 @@ using HomeVidProject.Models;
 
 namespace HomeVidProject.ViewModels
 {
-    public class CustomeFormViewModel
+    public class MovieFormViewModel
     {
-        public IEnumerable<MembershipType> MembershipTypes { get; set; }
-        public Customer Customer { get; set; }
+        public IEnumerable<Genre> Genres { get; set; }
+        public Movie Movie { get; set; }
     }
 }

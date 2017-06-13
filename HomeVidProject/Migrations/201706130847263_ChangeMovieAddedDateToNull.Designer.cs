@@ -7,13 +7,13 @@ namespace HomeVidProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class DropGenreIdAndRentCount : IMigrationMetadata
+    public sealed partial class ChangeMovieAddedDateToNull : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DropGenreIdAndRentCount));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeMovieAddedDateToNull));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706111915099_DropGenreIdAndRentCount"; }
+            get { return "201706130847263_ChangeMovieAddedDateToNull"; }
         }
         
         string IMigrationMetadata.Source

@@ -34,18 +34,28 @@ namespace HomeVidProject.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
+                "dbo.Genres",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        GenreName = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.Movies",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        GenreId = c.Byte(nullable: false),
+                        Name = c.String(nullable: false, maxLength: 255),
+                        GenreId = c.Int(nullable: false),
                         ReleaseDate = c.DateTime(nullable: false),
                         DateAdded = c.DateTime(nullable: false),
                         NumberInStock = c.Byte(nullable: false),
-                        CountOfRents = c.Byte(nullable: false),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Genres", t => t.GenreId, cascadeDelete: true)
+                .Index(t => t.GenreId);
             
             CreateTable(
                 "dbo.AspNetRoles",
@@ -123,6 +133,7 @@ namespace HomeVidProject.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.Movies", "GenreId", "dbo.Genres");
             DropForeignKey("dbo.Customers", "MembershipTypeId", "dbo.MembershipTypes");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
@@ -130,6 +141,7 @@ namespace HomeVidProject.Migrations
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.Movies", new[] { "GenreId" });
             DropIndex("dbo.Customers", new[] { "MembershipTypeId" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
@@ -137,6 +149,7 @@ namespace HomeVidProject.Migrations
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.Movies");
+            DropTable("dbo.Genres");
             DropTable("dbo.MembershipTypes");
             DropTable("dbo.Customers");
         }

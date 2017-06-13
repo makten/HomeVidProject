@@ -7,13 +7,13 @@ namespace HomeVidProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class RepopulateTables : IMigrationMetadata
+    public sealed partial class PopulateMembershipType : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RepopulateTables));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(PopulateMembershipType));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706121836325_RepopulateTables"; }
+            get { return "201706130747139_PopulateMembershipType"; }
         }
         
         string IMigrationMetadata.Source
