@@ -9,6 +9,7 @@
 
 @using ( @Html.BeginForm("Save", "Customers"))
 {
+    
     @Html.ValidationSummary(true, "Please fix the following errors.")
 
 
@@ -40,7 +41,15 @@
 
 
     @Html.HiddenFor(m => m.Customer.Id)
+    @Html.AntiForgeryToken()
 
     <button type="submit" class="btn btn-success btn-sm">Save</button>
+    
 }
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
 
