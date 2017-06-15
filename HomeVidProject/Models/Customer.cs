@@ -22,7 +22,7 @@ namespace HomeVidProject.Models
         [Display(Name = "Membership Type")]
         public byte MembershipTypeId { get; set; }
 
-        [Min18YearsIfAMember]
+        //[Min18YearsIfAMember]
         public DateTime? DoB { get; set; }
         
     }

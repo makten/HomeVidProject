@@ -20,7 +20,7 @@ namespace HomeVidProject.Dtos
        
         public byte MembershipTypeId { get; set; }
 
-        [Min18YearsIfAMember]
+        //[Min18YearsIfAMember]
         public DateTime? DoB { get; set; }
     }
 }
