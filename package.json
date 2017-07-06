@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "watchify": "watchify -t vueify -e .ViewModels/Assets/js/main.js -o ./Scripts/build.js -v",
+    "watchify": "watchify -t vueify -e src/assets/js/app.js -o ./static/js/build.js -v",
     "webpack": "set NODE_ENV=devopment && webpack --hide-modules",
     "dev": "set NODE_ENV=devopment && webpack --hide-modules --watch",
     "production": "set NODE_ENV=production && webpack --hide-modules",
@@ -43,7 +43,9 @@
   "dependencies": {
     "babel-preset-es2015": "^6.1.18",
     "bootstrap": "^3.3.5",
-    "bootstrap-sass": "^3.3.7",    
+    "bootstrap-sass": "^3.3.7",
+    "chart.js": "^2.5.0",
+    "d3": "^4.7.4",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.1",
@@ -52,7 +54,9 @@
     "jquery": "^3.1.1",
     "lodash": "^4.17.4",
     "nprogress": "^0.2.0",
-    "selectize": "^0.12.4",    
+    "selectize": "^0.12.4",
+    "validatorjs": "^3.12.0",
+    "vee-validate": "^2.0.0-beta.25",
     "vue": "^2.1.8",
     "vue-chartjs": "^2.5.6",
     "vue-highcharts": "0.0.9",
