@@ -1,7 +1,7 @@
-let webpack = require('webpack')
+var webpack = require('webpack')
 
 
-let path = require('path')
+var path = require('path')
 
 module.exports = {
 
@@ -11,7 +11,7 @@ module.exports = {
 	entry: { 
 
 
-		app: './src/assets/js/app.js',
+		app: './scripts/src/assets/js/app.js',
 
 		vendor: ['vue', 'axios', 'vue-resource', 'jquery', 'lodash']
 
@@ -20,11 +20,11 @@ module.exports = {
 
 	output: {
 
-		path: path.resolve(__dirname, './static/js'),
-
+		path: path.resolve(__dirname, './Scripts/built'),
+		
 		filename: '[name].js',
 
-		publicPath: './static'
+		publicPath: './Scripts/built'
 	},
 
 

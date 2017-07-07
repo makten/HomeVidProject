@@ -102,7 +102,7 @@ namespace HomeVidProject.Controllers
            
             //var customers = _context.Customers.ToList();
             var customers = _context.Customers.Include(c => c.MembershipType);
-
+            
            
             return View(customers);
         }

@@ -23,6 +23,11 @@ namespace HomeVidProject
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/vuebuilt").Include(
+                            "~/Scripts/built/vendor.js",
+                            "~/Scripts/built/app.js"
+                          ));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-solar.css",
                       "~/Content/site.css"));
