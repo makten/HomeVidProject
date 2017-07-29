@@ -10,13 +10,15 @@
 
 </head>
 <body>
+
+
     <div id="app">
 
-        @*@Html.Partial("_NavBar", Model.Movie)*@
         @Html.Partial("_NavBar")
 
         <div class="container body-content">
             @RenderBody()
+
             <hr />
             <footer>
                 <p>&copy; @DateTime.Now.Year - HomeVidEO App</p>
@@ -25,10 +27,17 @@
 
     </div>
 
+
 @Scripts.Render("~/bundles/jquery")
+<script>
+    var token = '@Html.AntiForgeryToken()';
+    window.csrfToken = $(token).val()
+</script>
 @Scripts.Render("~/bundles/bootstrap")
 @Scripts.Render("~/bundles/vuebuilt")
 @RenderSection("scripts", required: false)
+
+
 
 </body>
 </html>

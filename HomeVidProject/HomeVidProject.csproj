@@ -282,6 +282,24 @@
     </Content>
     <Content Include="Scripts\built\app.js" />
     <Content Include="Scripts\built\vendor.js" />
+    <Content Include="Scripts\src\assets\js\app.js" />
+    <Content Include="Scripts\src\assets\js\bootstrap.js" />
+    <Content Include="Scripts\src\assets\js\charts\Bar.js" />
+    <Content Include="Scripts\src\assets\js\charts\Guage.js" />
+    <Content Include="Scripts\src\assets\js\charts\Line.js" />
+    <Content Include="Scripts\src\assets\js\components\customer\customer-create-edit.vue" />
+    <Content Include="Scripts\src\assets\js\components\customer\customers-index.vue" />
+    <Content Include="Scripts\src\assets\js\components\home\home.vue" />
+    <Content Include="Scripts\src\assets\js\core\Errors.js" />
+    <Content Include="Scripts\src\assets\js\core\Form.js" />
+    <Content Include="Scripts\src\assets\js\core\tab.js" />
+    <Content Include="Scripts\src\assets\js\core\tabs.js" />
+    <Content Include="Scripts\src\assets\js\mixins\dropdown.js" />
+    <Content Include="Scripts\src\assets\js\mixins\FormHelper.js" />
+    <Content Include="Scripts\src\assets\js\mixins\GaugeCreator.js" />
+    <Content Include="Scripts\src\assets\js\mixins\SearchEngine.js" />
+    <Content Include="Scripts\src\assets\js\mixins\UcsQueries.js" />
+    <Content Include="Scripts\src\assets\js\mixins\validationRules.js" />
     <Content Include="Scripts\vendor.js" />
     <Content Include="webpack.config.js" />
     <Content Include="package.json" />
@@ -296,8 +314,6 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\src\assets\js\app.js" />
-    <Content Include="Scripts\src\assets\js\bootstrap.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -340,8 +356,11 @@
     <Content Include="Views\Movies\Details.cshtml" />
     <Content Include="Views\Customers\CustomerForm.cshtml" />
     <Content Include="Views\Movies\MovieForm.cshtml" />
-    <Content Include="Scripts\src\assets\js\components\home\home.vue" />
-    <Content Include="Scripts\src\assets\js\components\customer\customers-index.vue" />
+    <Content Include="Scripts\src\assets\js\core\linechart.vue" />
+    <Content Include="Scripts\src\assets\js\core\modal.vue" />
+    <Content Include="Scripts\src\assets\js\core\snackbar.vue" />
+    <Content Include="Scripts\src\assets\js\mixins\Selector.vue" />
+    <Content Include="Scripts\src\assets\js\components\home\index.vue" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\src\assets\js\components\movie\" />

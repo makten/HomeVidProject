@@ -24,6 +24,9 @@ window.axios = require('axios');
 
 
 window.Vue = require('vue');
+import VueRouter from "vue-router";
+window.VueRouter = VueRouter;
+Vue.use(VueRouter);
 //Vue.use(ClientTable, {}, false, require('./template.js')('client'))
 //Vue.use(VeeValidate)
 
@@ -37,16 +40,16 @@ window.Vue = require('vue');
 
 require('vue-resource');
 
-//import Form from '../core/Form.js';
-//import Errors from '../core/Errors.js';
+import Form from './core/Form.js';
+import Errors from './core/Errors.js';
 //import Bar from '../charts/Bar.js';
 //import LineChart from '../charts/Line.js';
 //import Gauge from '../charts/Guage.js';
 //import Moment from 'moment';
 
 
-//window.Form = Form;
-//window.Errors = Errors;
+window.Form = Form;
+window.Errors = Errors;
 //window.Bar = Bar;
 //window.LineChart = LineChart;
 //window.Gauge = Gauge;
@@ -60,12 +63,13 @@ require('vue-resource');
 
 //// axios.defaults.headers.common['X-CSRFToken'] = csrfToken;
 
-//axios.interceptors.request.use((request) => {
+axios.interceptors.request.use((request) => {
 
-//    request.headers['X-CSRF-TOKEN'] = csrfToken;
-//    return request;
+    request.headers['X-CSRF-TOKEN'] = csrfToken;
+    return request;
 
-//});
+});
+
 
 
 // Vue.http.interceptors.push((request, next) => {

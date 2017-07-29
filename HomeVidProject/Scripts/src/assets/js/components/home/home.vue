@@ -1,8 +1,6 @@
 ﻿<script>
 
-	export default {
-
-		
+	export default {		
 
 		data () {
 
@@ -23,6 +21,9 @@
 
 
 		methods: {
+			goHome(){				
+				this.$router.push('/');
+			},
 
 			getUser () {
 
@@ -31,7 +32,14 @@
 
 		},
 
-
+		watch: {
+			'$route' (to, from){
+				//alert(to.params.id);
+				console.log(from)
+				console.log(to)
+			}
+		},
+	
 		computed: {
 
 		}
@@ -43,8 +51,8 @@
 
 <template>
 
-	<div>
-		
+	<div>	
+
 
 		<div class="jumbotron">
 			<h1>{{welcome}}</h1>
@@ -57,11 +65,13 @@
 
 
 		<div class="row">
+
+
 			<div class="col-md-4">
-				<h2>Watching</h2>                
+				<h2>Watching</h2>
 
 				<p>
-					lorem 
+					lorem
 				</p>
 				<p><a class="btn btn-default" href="#">Learn more &raquo;</a></p>
 			</div>
